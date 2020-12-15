@@ -8,34 +8,22 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        double [] arr = {5,3,2,8,1,4};
-        arr = oddSort(arr);
-        for(int i=0; i<arr.length;i++){
-            System.out.print(arr[i] + "\t");
+        System.out.print("Enter n: ");
+        int length = new Scanner(System.in).nextInt();
+
+        int[] arr = new int[length];
+
+        for(int i = 0; i < length; i++){
+            arr[i] = new Random().nextInt(9);
+            System.out.print(arr[i] + " ");
         }
 
-        System.out.println(oddSortSecond(arr));
+        System.out.print("\n");
+        System.out.println(
+                Arrays.stream(arr)
+                        .filter(e -> e%2 == 0)
+                        .average()
+                        .getAsDouble()
+        );
     }
-
-    public static double[] oddSort(double[] arr){
-        List<Integer> oddNum = new ArrayList<Integer>();
-        for(int i = 0;i<arr.length;i++){
-            if(arr[i]%2!=0){
-                oddNum.add(i);
-            }
-        }
-
-        double temp = 0;
-        for(int i=0; i<oddNum.size()-1;i++){
-            for(int j = oddNum.size() - 1; j > i; j--){
-                if(arr[oddNum.get(j-1)]>arr[oddNum.get(j)]){
-                    temp = arr[oddNum.get(j-1)];
-                    arr[oddNum.get(j-1)] = arr[oddNum.get(j)];
-                    arr[oddNum.get(j)] = temp;
-                }
-            }
-        }
-        return arr;
-    }
-
 }
