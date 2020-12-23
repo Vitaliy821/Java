@@ -1,6 +1,5 @@
 package com.company;
 
-//Тут повинно бути набагато більше методів, ось перші з них
 public class Queue {
     private Node _start;
     private Node _end;
