@@ -19,7 +19,7 @@ public class ArrayList {
         }
     }
 
-    public int getCapacity(){ //Чи варто зробити приватним? Я вважаю публічний нормальним
+    public int getCapacity(){
         return _array.length;
     }
 
